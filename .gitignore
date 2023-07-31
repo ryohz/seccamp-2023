@@ -1,3 +1,4 @@
 tmp/
 docker/
 manifests/postgres-secret.yml
+manifests/goapp-secret.yml

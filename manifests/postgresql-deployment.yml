@@ -15,11 +15,17 @@ spec:
       containers:
         - name: postgres
           image: postgres:bullseye
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           ports:
-            - containerPort: 5432
+            - containerPort: 1234
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-credentials
+                  name: postgres-secret
                   key: password
+            - name: POSTGRES_DB
+              value: seccamp
