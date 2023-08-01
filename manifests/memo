@@ -1,1 +1,0 @@
-value: postgres://postgres:passwd@postgres-service:5432/seccamp
