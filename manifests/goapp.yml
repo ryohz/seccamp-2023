@@ -23,6 +23,7 @@ spec:
                 secretKeyRef:
                   name: goapp-secret
                   key: database-dsn
+
 ---
 apiVersion: v1
 kind: Service
@@ -31,11 +32,11 @@ metadata:
   labels:
     app: goapp
 spec:
-  # type: NodePort
   selector:
     app: go-app
   ports:
     - protocol: TCP
-      port: 8080
+      # exposed port
+      port: 80
+      # container port
       targetPort: 8080
-      # nodePort: 30080
