@@ -7,8 +7,7 @@ metadata:
     kubernetes.io/ingress.class: contour
 spec:
   rules:
-    - host: foo.bar.com
-      http:
+    - http:
         paths:
         - path: /
           pathType: Prefix
